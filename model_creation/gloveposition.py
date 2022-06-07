@@ -67,7 +67,6 @@ def genposidata(KMER, KSTEP):
         index = 0
         kmerList = [','.join(dataList[i][0:557])]
 
-            # kmer列表
         while index + KMER <= len(dataList[i][557]):
             windData = dataList[i][557][index:index + KMER].upper()
             ind = getIndex(dic, windData)
