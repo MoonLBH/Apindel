@@ -5,7 +5,7 @@ Apindel is a deep learning framework based on Attention mechanism and Positional
 
 It automatically trained the sequence features of DNA with GloVe model, introduced location information through Positional Encoding (PE), and embedded the trained word vector matrixes into a deep learning model containing BiLSTM and Attention mechanism.
 ## Install
-* Python == 3.6
+* Python == 3.8.8
 * pandas == 1.0.1
 * numpy == 1.18.5
 * mittens == 0.2
