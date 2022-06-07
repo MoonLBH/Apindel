@@ -67,7 +67,6 @@ def Indexdata(KMER,KSTEP):
     dic = dnaListGet([], KMER)
     dataPath = 'data/data.csv'
     outputList = "data/data_%s_%s.txt"%(KMER,KSTEP)
-    # 读取数据
     dataList = []
     print('loading data')
     with open(dataPath) as f:
@@ -85,7 +84,6 @@ def Indexdata(KMER,KSTEP):
         inputFlag = 0
         index = 0
         kmerList = [','.join(dataList[i][0:557])]
-        # kmer列表
         while index + KMER <= len(dataList[i][557]):
             windData = dataList[i][557][index:index + KMER].upper()
             ind = getIndex(dic, windData)
@@ -97,15 +95,14 @@ def Indexdata(KMER,KSTEP):
             index += KSTEP
         fout.writelines(",".join('%s' % item for item in kmerList) + '\n')
 
-        # 写入临时表
         kmerListAll.append(kmerList)
 
         if i % 500 == 0:
-            print("已经处理了%s条数据" % (i))
+            print("%s pieces of data have been processed" % (i))
     fout.close()
     del dic,dataList,kmerList
     gc.collect()
-    print("序列已经转化为向量,用时处理了%s条数据" % (i))
+    print("Sequences have been converted to vectors and %s of data have been processed in time" % (i))
     data = kmerListAll
     return data,kmerListAll
 
