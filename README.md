@@ -31,6 +31,7 @@ If you want to reproduce the results of this paper, please perform the following
 * model_get.py: Deep learning model framework.
 * multy.py: Attention mechanism.
 * main.py：Main function.
+* loadData.py：Read data
 
 
 
